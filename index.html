@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智询助手 | 客户咨询自动化案例</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">询</div>
+          <div>
+            <strong>智询助手</strong>
+            <span>客户咨询自动化案例</span>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="案例导航">
+          <a href="#dashboard" class="active">总览</a>
+          <a href="#inbox">咨询收件箱</a>
+          <a href="#workflow">自动化流程</a>
+          <a href="#offer">报价包</a>
+        </nav>
+
+        <section class="side-panel">
+          <span class="panel-label">适用客户</span>
+          <p>本地商家、课程顾问、装修公司、摄影工作室、跨境卖家、B2B 服务商。</p>
+        </section>
+      </aside>
+
+      <section class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Codex 变现案例 01</p>
+            <h1>把微信、官网、表单咨询整理成可跟进线索</h1>
+          </div>
+          <button class="primary-action" id="exportBtn" type="button">导出线索 CSV</button>
+        </header>
+
+        <section class="hero-band" id="dashboard">
+          <div class="hero-copy">
+            <p class="status-pill">演示行业：少儿英语培训机构</p>
+            <h2>每天 40 条咨询，自动分级、生成回复、同步表格。</h2>
+            <p>
+              这个案例展示一个可卖给小企业的自动化系统：客户发来需求后，系统自动识别意向、预算、紧急程度，并生成适合人工微调的回复草稿。
+            </p>
+          </div>
+          <div class="metric-grid" aria-label="案例指标">
+            <article>
+              <span>响应时间</span>
+              <strong>2 分钟</strong>
+              <small>从人工平均 35 分钟降低</small>
+            </article>
+            <article>
+              <span>高意向识别</span>
+              <strong>88%</strong>
+              <small>优先提醒销售跟进</small>
+            </article>
+            <article>
+              <span>每周节省</span>
+              <strong>11 小时</strong>
+              <small>按 2 名顾问估算</small>
+            </article>
+          </div>
+        </section>
+
+        <section class="toolbar" aria-label="筛选咨询">
+          <div>
+            <label for="searchInput">搜索咨询</label>
+            <input id="searchInput" type="search" placeholder="输入姓名、渠道、需求关键词" />
+          </div>
+          <div>
+            <label for="intentFilter">意向等级</label>
+            <select id="intentFilter">
+              <option value="all">全部</option>
+              <option value="高">高意向</option>
+              <option value="中">中意向</option>
+              <option value="低">低意向</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="workspace" id="inbox">
+          <div class="lead-list" id="leadList" aria-label="咨询列表"></div>
+
+          <article class="detail-panel" id="detailPanel">
+            <div class="empty-state">
+              <strong>选择一条咨询</strong>
+              <p>查看自动识别结果、跟进建议和回复草稿。</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="process-section" id="workflow">
+          <div class="section-heading">
+            <p class="eyebrow">交付逻辑</p>
+            <h2>客户买到的不是页面，而是一套少做重复活的流程</h2>
+          </div>
+          <div class="process-grid">
+            <article>
+              <span>01</span>
+              <h3>接入入口</h3>
+              <p>官网表单、微信群记录、客服复制内容、Excel 批量导入都可以先做轻量版。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>自动分类</h3>
+              <p>识别客户需求、预算、城市、课程类型、紧急程度和是否需要人工优先处理。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>生成回复</h3>
+              <p>根据客户问题生成自然回复，附带下一步动作，比如发试听课链接或邀约电话。</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>同步表格</h3>
+              <p>沉淀到 CSV、飞书、Notion、Google Sheets 或客户现有 CRM，方便复盘转化。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="offer-section" id="offer">
+          <div>
+            <p class="eyebrow">你可以这样卖</p>
+            <h2>“AI 咨询自动化 5 天交付包”</h2>
+            <p>
+              标准版包含 1 个咨询入口、1 套分类规则、3 个回复模板、1 个线索表和一次远程培训。适合定价 3999 元起。
+            </p>
+          </div>
+          <div class="offer-card">
+            <span>客户可感知结果</span>
+            <strong>回复更快，线索不漏，销售知道先跟谁。</strong>
+            <button type="button" id="copyPitchBtn">复制销售话术</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
